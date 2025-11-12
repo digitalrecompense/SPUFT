@@ -112,3 +112,5 @@ The journey of building SPUFT has only just begun – and, fittingly, it is a jo
 * [https://iai.tv/articles/time-and-the-universe-are-on-an-infinite-loop-auid-2925](https://iai.tv/articles/time-and-the-universe-are-on-an-infinite-loop-auid-2925)
 * [https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/](https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/)
 * [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
+
+## RAiTHE INDUSTRIES INC.© 2025
