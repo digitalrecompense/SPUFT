@@ -6,14 +6,37 @@
 
 We define key elements:
 
-* **Origin Point `𝒪`**: 0-dimensional, containing all potential information — a singular initial condition.
-* **Intent Operator `Î`**: Rule or function applying creative principles to `𝒪`. Example formulation:
+* **Origin Point `𝒪`**: A distinguished element of a state space `(𝓧, τ)`, taken to be the null section of the tangent bundle, i.e.
 
   ```
-  S₀ = 𝒪
-  Sₙ₊₁ = Î(Sₙ)
+  𝒪 := 0_{x₀} ∈ T_{x₀}𝓧
   ```
-* **Origin Vector `Ω⃗`**: Represents dimensional emergence from `𝒪`, evolving from symmetry breaking.
+
+  for some anchor point `x₀ ∈ 𝓧`. The point encodes the complete set of latent degrees of freedom prior to any iteration.
+* **Intent Operator `Î`**: A self-map `Î : 𝒟(Î) ⊆ 𝓧 → 𝓧` that generates a sequence of states by
+
+  ```
+  S₀ = x₀,
+  Sₙ₊₁ = Î(Sₙ),  n ≥ 0,
+  ```
+
+  where `𝒪` is represented as the zero vector in `T_{S₀}𝓧`.
+* **Emergence Vector `Ω⃗`**: A curve in the tangent bundle tracking directed emergence from the origin,
+
+  ```
+  Ω⃗ : [0,1] → T𝓧,    Ω⃗(0) = 0_{x₀},    π ∘ Ω⃗(t) = S_t,
+  ```
+
+  with `π : T𝓧 → 𝓧` the canonical projection and `S_t` obtained by interpolating the discrete iteration.
+
+### Structural Assumptions for `Î`
+
+To ensure that the iteration rule produces well-defined states, we assume:
+
+1. **Topological regularity**: `(𝓧, τ)` is a second-countable, Hausdorff topological manifold of class `C¹`, permitting unique tangent spaces `T_x𝓧` at every point.
+2. **Measure structure**: There exists a complete probability measure `μ` on the Borel σ-algebra `𝔅(𝓧)` such that `Î` is `μ`-measurable and `μ`-preserving (`μ(Î⁻¹(A)) = μ(A)` for all `A ∈ 𝔅(𝓧)`).
+3. **Domain closure**: The domain `𝒟(Î)` is forward invariant (`Î(𝒟(Î)) ⊆ 𝒟(Î)`), guaranteeing that `Sₙ ∈ 𝒟(Î)` for every `n`.
+4. **Continuity/differentiability**: `Î` is at least `C¹`, ensuring that the interpolated path `t ↦ S_t` is differentiable almost everywhere so that `Ω⃗` is well-defined as its velocity lift.
 
 We proceed to describe dimensional emergence, field unification, chaos theory, intent formalization, and cosmological constants.
 
@@ -121,27 +144,49 @@ Evolution = Predictable Law + Uncertainty
 
 * Action principle with intent:
 
-```
-δ(S_phys + S_intent) = 0
-```
+  ```
+  δ(S_phys + S_intent) = 0
+  ```
 
 * Information increasing over time:
 
-```
-d/dt I[S(t)] ≥ 0
-```
+  ```
+  d/dt I[S(t)] ≥ 0
+  ```
 
 * Anthropic bias:
 
-```
-ℒ_intent = -V_intent(α⃗)
-```
+  ```
+  ℒ_intent = -V_intent(α⃗)
+  ```
 
 * Golden ratio via recurrence:
 
+  ```
+  Iₙ₊₁ = Iₙ + Iₙ₋₁ → Iₙ₊₁/Iₙ → φ
+  ```
+
+### Operator Representation of Intent
+
+Let `𝒮` denote the space of admissible system trajectories `S : [0,T] → 𝓧` compatible with `Î`. We encode the narrative intent as a functional `𝓘 : 𝒮 → ℝ` defined by
+
 ```
-Iₙ₊₁ = Iₙ + Iₙ₋₁ → Iₙ₊₁/Iₙ → φ
+𝓘[S] = ∫₀ᵀ ⟨Ξ(S(t)), Ω⃗(t)⟩ dt - Φ(S(T)),
 ```
+
+where `Ξ : 𝓧 → T^*𝓧` captures informational drive and `Φ : 𝓧 → ℝ` specifies terminal preference. The associated intent operator acts as the gradient flow on `𝒮`:
+
+```
+𝔊_intent[S] := - Grad 𝓘[S],
+```
+
+so that the combined evolution is governed by the coupled equation
+
+```
+∂ₜ S(t) = V_phys(S(t)) + 𝔊_intent[S](t),
+```
+
+with `V_phys` the vector field induced by the physical Lagrangian. This representation allows `intent` to enter subsequent derivations as an explicit operator contributing to state evolution.
 
 ---
 
