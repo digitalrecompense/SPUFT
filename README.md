@@ -85,12 +85,21 @@ SPUFT is a beginning. The journey loops onward.
 ### Citations
 
 [1] [https://en.wikipedia.org/wiki/Indeterminism](https://en.wikipedia.org/wiki/Indeterminism)
+
 [2] [https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/](https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/)
+
 [3] [https://physics.stackexchange.com/questions/730572/how-can-a-bubble-universes-within-eternally-inflating-space-be-both-finite-and-i](https://physics.stackexchange.com/questions/730572/how-can-a-bubble-universes-within-eternally-inflating-space-be-both-finite-and-i)
+
 [4] [https://www.theguardian.com/education/2005/apr/14/research.highereducation1](https://www.theguardian.com/education/2005/apr/14/research.highereducation1)
+
 [5] [https://www.theguardian.com/education/2005/apr/14/research.highereducation1](https://www.theguardian.com/education/2005/apr/14/research.highereducation1)
+
 [6] [https://iai.tv/articles/time-and-the-universe-are-on-an-infinite-loop-auid-2925](https://iai.tv/articles/time-and-the-universe-are-on-an-infinite-loop-auid-2925)
+
 [7] [https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/](https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/)
+
 [8] [https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/](https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/)
+
 [9] [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
+
 [10] [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
