@@ -113,4 +113,4 @@ The journey of building SPUFT has only just begun – and, fittingly, it is a jo
 * [https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/](https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/)
 * [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
 
-## RAiTHE INDUSTRIES INC.© 2025
+#### RAiTHE INDUSTRIES INC.© 2025
