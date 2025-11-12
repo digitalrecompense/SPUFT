@@ -76,7 +76,7 @@ We promote the staged timeline to a finite-state dynamical system `𝔇 = (Σ, �
 * `F : Σ × ℝ_{≥0} → Σ` is a piecewise-smooth evolution rule
 
   ```
-  F(σᵢ, τ) = 
+  F(σᵢ, τ) =
     { σᵢ,          τ < τᵢ₊₁,
       σᵢ₊₁,        τ ≥ τᵢ₊₁ },
   ```
@@ -144,6 +144,7 @@ Dimensional growth feeds into four-dimensional observables via Kaluza–Klein re
 
 ```
 M_{Pl,eff}^2(τ) = M_{Pl}^{2+N-3} Vol(𝓜_extra(τ)),
+
 g_eff^{-2}(τ) = g_{N}^{-2} Vol(𝓜_extra(τ)).
 ```
 
@@ -159,35 +160,120 @@ These constraints ensure the staged dimensional growth remains consistent with o
 
 ## Unified Field Equations
 
-Define a master field `𝛶(x)` on `𝓜`:
+### Step 1 – Unified Action Functional
+
+We posit that the master field `𝛶(x,y)` on the total manifold `𝓜 = 𝓜_phys × 𝓜_extra` contains the following components:
+
+* `G_{AB}` – the full `(4+m)`-dimensional metric with determinant `G` (`A,B = 0,…,3+m-1`).
+* `A_A^I` – non-Abelian gauge fields for a compact group `𝔊` with structure constants `f^{I}{}_{JK}`.
+* `Φ^α` – scalar moduli parametrizing the size and shape of the extra dimensions (`α = 1,…,n_Φ`).
+* `ψ` – representative fermionic matter (kept schematic but included for completeness).
+* `Ξ` – the intent potential, entering through a scalar functional but varying only along `𝓜_phys`.
+
+The unified action decomposes as
 
 ```
-𝛶 = {g_{μν}(x), A_{μ}(x), Φ(x), ψ(x), ...}
+S_unified[𝛶] = S_grav + S_gauge + S_scalar + S_fermion + S_intent + S_boundary,
 ```
 
-Unified action:
+with individual terms
 
 ```
-S_unified = ∫ dⁿx √(-G) ℒ_unified(𝛶, ∂𝛶)
+S_grav      = (1/2κ_{4+m}) ∫_{𝓜} d^{4+m}X √(-G) [ℛ(G) - 2Λ_{4+m}],
+S_gauge     = - (1/4g_{4+m}^2) ∫_{𝓜} d^{4+m}X √(-G) 𝔾_{IJ} F_{AB}^I F^{J AB},
+S_scalar    = - ∫_{𝓜} d^{4+m}X √(-G) [ (1/2) 𝒢_{αβ}(Φ) ∇_A Φ^α ∇^A Φ^β + V(Φ)],
+S_fermion   = ∫_{𝓜} d^{4+m}X √(-G) [i \bar{ψ} Γ^A 𝒟_A ψ - m(Φ) \bar{ψ} ψ],
+S_intent    = - ∫_{𝓜_phys} d^4x √(-g) 𝓥_intent(Ξ, Φ, A_μ, …),
+S_boundary  = ∫_{∂𝓜} d^{3+m}Σ √(|h|) 𝒦.
 ```
 
-Sample Lagrangian:
+Here:
 
-```
-ℒ_unified = (1/2κ) R(G) + ℒ_fields + ℒ_extra-dim + ...
-```
+* `κ_{4+m} = 8πG_{4+m}` is the higher-dimensional gravitational coupling.
+* `ℛ(G)` is the Ricci scalar of `G_{AB}`, and `Λ_{4+m}` a bulk cosmological constant.
+* `𝔾_{IJ}` and `𝒢_{αβ}` are positive-definite metrics on gauge and scalar target spaces, respectively.
+* `F_{AB}^I = ∂_A A_B^I - ∂_B A_A^I + f^{I}{}_{JK} A_A^J A_B^K`.
+* `Γ^A` are Dirac matrices on `𝓜` and `𝒟_A` the spin/gauge covariant derivative.
+* `𝓥_intent` encodes the macroscopic guiding potential localized on the observable slice, reflecting SPUFT’s informational bias.
+* `𝒦` is the Gibbons–Hawking–York term ensuring a well-posed variational principle for the metric.
 
-Derived equations:
+Dimensional reduction along `𝓜_extra` yields effective four-dimensional couplings after integrating over the compact volume `Vol_extra = ∫_{𝓜_extra} d^my √(γ)`. Fluctuations of `Φ^α` capture the dynamics of the radii `Rᵢ(τ)` discussed previously.
 
-* **Einstein equations**: `R_{μν} - ½ g_{μν} R + Λ g_{μν} = 8πG ⟨T_{μν}⟩`
-* **Gauge fields**: `∇^ν F_{μν} = J_μ`
-* **Scalar fields**: `∇²Φ - ∂V/∂Φ = 0`
+### Step 2 – Euler–Lagrange Equations
 
-Unified abstraction:
+Varying the total action with respect to each field component produces coupled field equations:
 
-```
-𝔽[𝛶] = 0
-```
+1. **Metric Variation (`δG_{AB}`)**
+
+   The Einstein equation in `(4+m)` dimensions reads
+
+   ```
+   ℛ_{AB} - (1/2) G_{AB} ℛ + Λ_{4+m} G_{AB} = κ_{4+m} T_{AB},
+   ```
+
+   where the total energy–momentum tensor combines all non-gravitational contributions
+
+   ```
+   T_{AB} = T^{(gauge)}_{AB} + T^{(scalar)}_{AB} + T^{(fermion)}_{AB} + T^{(intent)}_{AB}.
+   ```
+
+   Individual pieces follow from standard variational identities:
+
+   * `T^{(gauge)}_{AB} = (1/g_{4+m}^2) 𝔾_{IJ} [F_{AC}^I F_B^{J C} - (1/4) G_{AB} F_{CD}^I F^{J CD}]`.
+   * `T^{(scalar)}_{AB} = 𝒢_{αβ} [∇_A Φ^α ∇_B Φ^β - (1/2) G_{AB} ∇_C Φ^α ∇^C Φ^β] - G_{AB} V(Φ)`.
+   * `T^{(fermion)}_{AB} = (i/2) [\bar{ψ} Γ_{(A} 𝒟_{B)} ψ - (𝒟_{(A} \bar{ψ}) Γ_{B)} ψ] + G_{AB} m(Φ) \bar{ψ} ψ`.
+   * `T^{(intent)}_{AB}` is localized on the 4D slice and contributes a brane-like stress tensor `∝ g_{μν} δ(𝓜_extra)`.
+
+   Restricting to the observable four-dimensional part `g_{μν}` yields the familiar Einstein equations with effective sources inherited from the extra dimensions.
+
+2. **Gauge Field Variation (`δA_A^I`)
+
+   The Yang–Mills equations generalize Maxwell’s equations:
+
+   ```
+   ∇_B (√(-G) 𝔾_{IJ} F^{J BA}) + √(-G) f^{K}{}_{IJ} A_B^J F^{I BA} = √(-G) J^{A}_I,
+   ```
+
+   with covariant current `J^{A}_I = g_{4+m}^2 (\bar{ψ} Γ^A T_I ψ + ∂𝓥_intent/∂A_A^I δ(𝓜_extra))`. In Lorentzian signature this becomes `𝒟_B F^{I BA} = J^{A I}`. Dimensional reduction splits `A_A^I` into 4D gauge fields `A_μ^I` and scalar Wilson lines `A_a^I`, providing both vector bosons and adjoint scalars in the effective theory.
+
+3. **Scalar Field Variation (`δΦ^α`)
+
+   The moduli satisfy generalized Klein–Gordon equations:
+
+   ```
+   𝒟_A (√(-G) 𝒢_{αβ} ∇^A Φ^β) - √(-G) ∂_α V(Φ) = √(-G) 𝒮_α,
+   ```
+
+   where `𝒟_A` includes the Levi-Civita and target-space connections, and source term `𝒮_α = (1/2) ∂_α 𝒢_{βγ} ∇_A Φ^β ∇^A Φ^γ + ∂_α m(Φ) \bar{ψ} ψ + ∂𝓥_intent/∂Φ^α δ(𝓜_extra)`.
+
+4. **Fermion Variation (`δ\bar{ψ}`)**
+
+   The Dirac equation follows directly:
+
+   ```
+   i Γ^A 𝒟_A ψ - m(Φ) ψ = 0,
+   ```
+
+   accompanied by its conjugate. The mass term depends on the moduli, ensuring backreaction on the scalar equations.
+
+5. **Intent Functional Variation (`δΞ`)**
+
+   Assuming `Ξ` only appears through `𝓥_intent`, extremization gives an evolution constraint on the informational potential:
+
+   ```
+   δΞ:   ∂𝓥_intent/∂Ξ = 0,
+   ```
+
+   which selects preferred histories consistent with the guiding narrative. Coupling to the other fields appears through mixed derivatives already displayed above.
+
+Together these Euler–Lagrange equations show how Einstein gravity, non-Abelian gauge dynamics, scalar moduli stabilization, fermionic matter, and the intent sector emerge from a single variational principle.
+
+### Step 3 – Gauge Choices, Boundary Data, and Conservation Laws
+
+* **Gauge Choices**: To solve the coupled system one typically imposes harmonic (de Donder) gauge `∇^A h_{AB} - (1/2) ∇_B h = 0` for metric fluctuations `h_{AB}` and generalized Lorenz gauge `𝒟^A A_A^I = 0` for the gauge sector. In the compact directions, fixing `A_a^I = 0` corresponds to choosing a trivial Wilson line vacuum, while alternative choices encode flux compactifications.
+* **Boundary Conditions**: The presence of `S_boundary` allows mixed Dirichlet/Neumann conditions. For a compact extra manifold without boundary, periodic boundary conditions enforce smoothness of fields. On brane-like hypersurfaces the Israel junction conditions match extrinsic curvature jumps to localized stress-energy, constraining how the intent sector backreacts.
+* **Conservation Laws**: Diffeomorphism invariance implies `∇^A T_{AB} = 0`, ensuring energy–momentum conservation. Gauge invariance yields covariantly conserved currents `𝒟_A J^{A}_I = 0`. For the scalar sector, Noether currents associated with moduli shift symmetries remain conserved when `V(Φ)` and `𝓥_intent` respect those symmetries. In the 4D effective theory these conservation laws project to standard continuity equations for matter, radiation, and intent-induced sources.
+* **Open Questions**: Key outstanding issues include (i) specifying a microscopic origin for `𝓥_intent` that remains consistent with quantum unitarity, (ii) determining whether moduli stabilization persists once quantum corrections on `𝓜_extra` are included, and (iii) understanding anomaly cancellation when the intent sector couples to chiral fermions. These open problems delineate future work required to make SPUFT predictive.
 
 ---
 
