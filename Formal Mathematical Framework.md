@@ -67,6 +67,37 @@ D(τ) = {
 
 Each `τᵢ` represents symmetry-breaking moments.
 
+#### Dynamical-Systems Representation
+
+We promote the staged timeline to a finite-state dynamical system `𝔇 = (Σ, Σ₀, F, 𝕋)` where:
+
+* `Σ = {σ₀, σ₁, σ₂, σ₃}` enumerates dimensional phases with `dim σᵢ = i`.
+* `Σ₀ = {σ₀}` encodes the primordial, zero-dimensional phase anchored at the origin point `𝒪`.
+* `F : Σ × ℝ_{≥0} → Σ` is a piecewise-smooth evolution rule
+
+  ```
+  F(σᵢ, τ) = 
+    { σᵢ,          τ < τᵢ₊₁,
+      σᵢ₊₁,        τ ≥ τᵢ₊₁ },
+  ```
+
+  so the automaton remains in `σᵢ` until a trigger time `τᵢ₊₁` is reached.
+* `𝕋 = {Θᵢ}` is the set of **symmetry-breaking triggers**, with each `Θᵢ` defined by an order parameter `χᵢ(τ)` satisfying
+
+  ```
+  Θᵢ : χᵢ(τᵢ₊₁) = χ_crit,   dχᵢ/dτ > 0 near τᵢ₊₁,
+  ```
+
+  ensuring directed transitions by forbidding reverse flows (`τ` monotonic). The triggers can be interpreted as phase transitions driven by the intent-modified evolution vector field `V_phys + 𝔊_intent` from the previous section.
+
+Continuous interpolation follows the lifted flow
+
+```
+∂τ D_cont(τ) = Φ(F(D_cont(τ), τ)),
+```
+
+where `Φ` maps the discrete state to the tangent space `T_{S_τ}𝓧`, enabling coupling to the emergence vector `Ω⃗`.
+
 ### Higher Dimensions and Compactification:
 
 Let `N ≥ 3`. The universe manifold:
@@ -78,6 +109,51 @@ Let `N ≥ 3`. The universe manifold:
 * `𝓜_phys`: Observable 4D space-time
 * `𝓜_extra`: Compactified dimensions (e.g. `S¹` in KK theory)
 * Planck-scale emergence: `Rᵢ(0) = lₚ`, where `lₚ ≈ 1.6 × 10⁻³⁵ m`
+
+#### Geometry and Stability of `𝓜_extra`
+
+We assume `𝓜_extra` factorizes into a product of homogeneous spaces `∏_{i=1}^{N-3} S¹_{(i)}` with radii `Rᵢ(τ)` evolving under
+
+```
+Rᵢ(τ) = Rᵢ(0) e^{-βᵢ(τ-τ₃)}  for τ ≥ τ₃,
+```
+
+where `βᵢ > 0` encodes stabilization rates after the 3D phase onset. The metric on `𝓜` decomposes as
+
+```
+G_{AB} = diag(g_{μν}(x), γ_{ab}(y; τ)),
+```
+
+with `γ_{ab}` taking the form
+
+```
+γ_{ab}(y; τ) = R_a(τ)^2 δ_{ab},
+```
+
+corresponding to a flat toroidal compactification with vanishing intrinsic curvature `ℛ_extra = 0`. Stability is enforced by a potential `V_stab(R) = ∑_i κ_i (Rᵢ - Rᵢ^*)²` whose minima `Rᵢ^* = Rᵢ(∞)` coincide with the exponential fixed point. Small fluctuations `δRᵢ` satisfy
+
+```
+∂²_τ δRᵢ + 2βᵢ ∂τ δRᵢ + (2κ_i) δRᵢ = 0,
+```
+
+so overdamped decay preserves compactification provided `βᵢ² ≥ 2κ_i`. The assumption aligns with SPUFT’s requirement that the cosmic “experiment” retains a persistent structure while accommodating novelty through higher-dimensional degrees of freedom.【F:SPUFT.md†L5-L68】【F:README.md†L7-L60】
+
+#### Coupling to Observable 4D Physics
+
+Dimensional growth feeds into four-dimensional observables via Kaluza–Klein reduction of the unified action. The effective 4D Planck mass `M_{Pl,eff}` and gauge couplings `g_eff` receive corrections proportional to the stabilized volumes `Vol(𝓜_extra(τ)) = ∏_i 2πRᵢ(τ)`. During transitions `Θᵢ`, the running radii modify the low-energy constants according to
+
+```
+M_{Pl,eff}^2(τ) = M_{Pl}^{2+N-3} Vol(𝓜_extra(τ)),
+g_eff^{-2}(τ) = g_{N}^{-2} Vol(𝓜_extra(τ)).
+```
+
+Compatibility with the narrative constraints of SPUFT imposes:
+
+1. **Looped experiment consistency**: The automaton must allow cyclical reheating of radii so that successive cosmic cycles inherit stabilized constants, mirroring the looped cosmology described in the core exposition.【F:SPUFT.md†L70-L155】
+2. **Balance of determinism and novelty**: Trigger times `τᵢ` are deterministic milestones, but fluctuations `δRᵢ` admit stochastic sources from the intent functional, matching the interplay of fixed laws and open-ended outcomes emphasized in the README.【F:README.md†L12-L97】
+3. **Anthropic viability**: 4D observers require that moduli settle before structure formation; hence `βᵢ` must exceed the Hubble rate at matter–radiation equality to keep variations within anthropically acceptable bounds, preserving purposeful evolution of intelligence central to SPUFT’s ethos.【F:README.md†L97-L173】
+
+These constraints ensure the staged dimensional growth remains consistent with observable physics while upholding SPUFT’s philosophical commitments.
 
 ---
 
