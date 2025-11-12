@@ -1,5 +1,5 @@
 # SPUFT
-SinglePointUnifiedFieldTheory
+Single Point Unified Field Theory
 
 ## Single Point Unified Field Theory (SPUFT)
 
