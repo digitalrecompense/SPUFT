@@ -104,4 +104,4 @@ SPUFT is a beginning. The journey loops onward.
 
 [10] [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
 
-RAiTHE INDUSTRIES INC.© 2025
+#### RAiTHE INDUSTRIES INC.© 2025
