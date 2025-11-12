@@ -100,6 +100,8 @@ SPUFT is a beginning. The journey loops onward.
 
 [8] [https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/](https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/)
 
+RAiTHE INDUSTRIES INC.© 2025
+
 [9] [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
 
 [10] [https://philarchive.org/rec/MALTPO-50](https://philarchive.org/rec/MALTPO-50)
