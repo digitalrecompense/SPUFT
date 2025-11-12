@@ -42,6 +42,103 @@ We proceed to describe dimensional emergence, field unification, chaos theory, i
 
 ---
 
+## Deterministic Core Dynamics
+
+To encode the deterministic backbone of SPUFT, we elevate the intent-driven iteration to a continuous-time dynamical system on the state bundle `T𝓧`. Let `x(τ) ∈ 𝓧` denote the emergent configuration, with velocity `v(τ) ∈ T_{x(τ)}𝓧`. We posit a canonical ordinary differential equation of the form
+
+```
+∂τ x(τ) = v(τ),
+∂τ v(τ) = F_det(x(τ), v(τ); λ),
+```
+
+where `λ` denotes fixed control parameters determined by the intent operator `Î`. The deterministic force field `F_det` incorporates three contributions:
+
+1. **Geometric propagation** `F_geo = -Γ(x)[v,v]`, with `Γ` the Levi-Civita connection coefficients on `(𝓧, g)` ensuring compatibility with the manifold’s metric structure.
+2. **Intent potential** `F_int = -∇_x V_int(x)`, capturing directed evolution dictated by the god-script. The potential `V_int` is `C²` and bounded below to guarantee global existence of solutions.
+3. **Conservation feedback** `F_cons = Π(x) v`, where `Π` is a linear operator enforcing conserved quantities (e.g., total informational charge) through projection onto invariant subspaces.
+
+Aggregating these pieces,
+
+```
+F_det(x, v; λ) = -Γ(x)[v,v] - ∇_x V_int(x) + Π(x) v.
+```
+
+The resulting flow `Φ_τ : T𝓧 → T𝓧` is `C¹` and volume-preserving when `Π` is skew-symmetric, aligning with the measure-preserving assumption on `Î`.
+
+In regimes where field-theoretic descriptions dominate, we promote the ODE to a field equation on the space-time manifold `𝓜`. Let `φ : 𝓜 → ℂ^k` represent the unified field. The deterministic PDE governing `φ` reads
+
+```
+□_g φ + δV_int/δφ̄ + 𝕌(φ, ∇φ; λ) = 0,
+```
+
+where `□_g` is the d’Alembert operator associated with the metric `g` on `𝓜`, `δV_int/δφ̄` is the functional derivative of the intent potential, and `𝕌` encodes gauge-covariant couplings derived from compactified dimensions. Boundary conditions follow from the emergence vector: `φ|_{τ=0} = φ_0`, `∂τ φ|_{τ=0} = 0`, ensuring compatibility with the origin point `𝒪`.
+
+---
+
+## Stochastic and Quantum Corrections
+
+To accommodate indeterminacy while preserving the deterministic scaffold, we introduce stochastic differential equations that perturb the deterministic flow. In phase-space variables, we write the Stratonovich SDE
+
+```
+d x = v dτ,
+d v = F_det(x, v; λ) dτ + ∑_{a=1}^m σ_a(x, v) ∘ dW_a(τ),
+```
+
+where `W_a` are independent Wiener processes and `σ_a : T𝓧 → T𝓧` are diffusion vector fields modeling quantum or intent-driven fluctuations. The noise amplitudes obey
+
+```
+⟨σ_a(x, v), σ_b(x, v)⟩ = D_{ab}(x, v),
+```
+
+with `D(x, v)` positive semi-definite and smooth, ensuring well-posedness. For Gaussian fluctuations we set
+
+```
+E[dW_a(τ)] = 0,
+E[dW_a(τ) dW_b(τ')] = δ_{ab} δ(τ-τ') dτ,
+```
+
+yielding Ito drift corrections `½ ∑_a (∇·σ_a) σ_a` in the Fokker–Planck representation. To capture heavy-tailed novelty events, we may replace the Wiener drivers with Lévy processes `L_a(τ)` of stability index `α_a ∈ (1,2]`, leading to jump diffusions with increments distributed as `P(|ΔL_a| > ξ) ∼ ξ^{-α_a}`.
+
+In the field-theoretic picture, quantum corrections are encoded by promoting `φ` to an operator-valued distribution satisfying the stochastic partial differential equation
+
+```
+□_g φ + δV_int/δφ̄ + 𝕌(φ, ∇φ; λ) = η,
+```
+
+with `η` a Gaussian random field of covariance
+
+```
+E[η(x) η̄(x')] = ℏ 𝒦(x, x'),
+```
+
+where `ℏ` sets the noise scale and `𝒦` is a kernel derived from compactification geometry. Non-Gaussian corrections arise by replacing `η` with a centered α-stable field, reflecting SPUFT’s allowance for rare, high-impact intent fluctuations.
+
+---
+
+## Measurable Diagnostics and Empirical Linkages
+
+To connect the theoretical constructs with simulations or observations, we identify measurable invariants and statistical diagnostics:
+
+1. **Lyapunov Spectrum**: For the flow `Φ_τ`, compute Lyapunov exponents `Λ_i` via tangent dynamics
+
+   ```
+   ∂τ δZ = J_F(Z) δZ,
+   ```
+
+   where `Z = (x, v)` and `J_F` is the Jacobian of the drift. Positive `Λ_i` quantify sensitive dependence on initial conditions, signaling chaos induced by intent modulations. Comparisons between deterministic and stochastic regimes isolate the stabilizing role of noise.
+
+2. **Kolmogorov–Sinai Entropy**: Evaluate `h_{KS}` from the Lyapunov spectrum or via partition refinements, providing an entropy rate that can be matched against symbolic dynamics extracted from SPUFT simulations.
+
+3. **Energy-like Invariants**: Define `E(τ) = ½⟨v, v⟩ + V_int(x)`; monitor `dE/dτ` to assess the balance between deterministic dissipation and stochastic injection. Empirical data can constrain `σ_a` by matching observed variance growth with theoretical predictions from the associated Fokker–Planck equation.
+
+4. **Correlation Functions**: For the field `φ`, compute two-point functions `G(x, x') = ⟨φ(x) φ̄(x')⟩`. Deviations from deterministic solutions encode quantum corrections measurable in simulated spectra.
+
+5. **Large Deviation Rates**: When Lévy noise is present, determine rate functions `I(z)` governing probabilities of macroscopic deviations. These rates can be inferred from simulation histograms to calibrate the heavy-tail indices `α_a`.
+
+Through these diagnostics, SPUFT’s deterministic skeleton and stochastic embellishments become amenable to quantitative validation, aligning mathematical structure with the narrative emphasis on purposeful yet open-ended cosmic evolution.【F:README.md†L12-L173】【F:SPUFT.md†L70-L155】
+
+---
+
 ## Emergence of Dimensions
 
 ### From 0D to 3D:
