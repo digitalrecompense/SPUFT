@@ -399,31 +399,59 @@ Evolution = Predictable Law + Uncertainty
 
 ## Intent and Informational Guidance
 
-### Formalization:
+### Formalization
 
-* Action principle with intent:
+#### Information Functional and Monotonicity
 
-  ```
-  δ(S_phys + S_intent) = 0
-  ```
+Let `𝒮_T` denote the space of absolutely continuous trajectories `S : [0,T] → 𝓧` that satisfy the dynamical constraints induced by `Î` and admit square-integrable velocities. We define the **information functional**
 
-* Information increasing over time:
+```
+I : 𝒮_T → ℝ_{≥ 0},
+I[S] := ∫₀ᵀ ι(S(t), ∂ₜS(t)) dt,
+```
 
-  ```
-  d/dt I[S(t)] ≥ 0
-  ```
+where `ι : T𝓧 → ℝ_{≥ 0}` is a smooth information density depending on the instantaneous state and velocity. The inequality `d/dt I[S(t)] ≥ 0` is enforced by requiring that `ι` satisfy
 
-* Anthropic bias:
+```
+∂ₜι(S(t), ∂ₜS(t)) + ⟨∇_S ι, ∂ₜS(t)⟩ + ⟨∇_{∂ₜS} ι, ∂²ₜS(t)⟩ ≥ 0
+```
 
-  ```
-  ℒ_intent = -V_intent(α⃗)
-  ```
+along admissible solutions of the intent-modified dynamics. Thus `I` maps each admissible trajectory to a non-negative scalar measuring cumulative informational gain.
 
-* Golden ratio via recurrence:
+#### Variational Coupling of Physics and Intent
 
-  ```
-  Iₙ₊₁ = Iₙ + Iₙ₋₁ → Iₙ₊₁/Iₙ → φ
-  ```
+The guiding principle `δ(S_phys + S_intent) = 0` augments the standard Euler–Lagrange equations with intent-derived forces. For a mechanical system with generalized coordinates `q^i`, the total Lagrangian is `L_tot = L_phys(q, q̇) + L_intent(q, q̇; Ξ)`. Stationarity of the combined action yields
+
+```
+δ(S_phys + S_intent) = 0 ⇒ d/dt (∂L_phys/∂q̇^i + ∂L_intent/∂q̇^i) - (∂L_phys/∂q^i + ∂L_intent/∂q^i) = 0.
+```
+
+Equivalently,
+
+```
+M_{ij} q̈^j + ∂_i V_phys = Q_i^{intent},
+Q_i^{intent} := -∂L_intent/∂q^i + d/dt(∂L_intent/∂q̇^i),
+```
+
+so the usual physical evolution acquires generalized forces `Q_i^{intent}` determined by the intent Lagrangian. When `L_intent = -V_intent(q; α⃗)` is potential-like, the correction appears as an additive potential `V_phys → V_phys + V_intent`.
+
+For field configurations `φ`, the total action `S_tot = ∫ d^{d+1}x [ℒ_phys(φ, ∂φ) + ℒ_intent(φ, ∂φ; Ξ)]` leads to modified field equations
+
+```
+∂_μ (∂ℒ_phys/∂(∂_μφ) + ∂ℒ_intent/∂(∂_μφ)) - (∂ℒ_phys/∂φ + ∂ℒ_intent/∂φ) = 0,
+```
+
+which can be read as the standard physical equation of motion sourced by an effective current `J_intent := ∂ℒ_intent/∂φ - ∂_μ(∂ℒ_intent/∂(∂_μφ))`. Hence `δ(S_phys + S_intent) = 0` systematically injects correction terms or potentials determined by the functional form of `ℒ_intent`.
+
+#### Fibonacci Recurrence and Informational Ratios
+
+The discrete growth rule `Iₙ₊₁ = Iₙ + Iₙ₋₁` emerges when the informational gain at step `n+1` depends on both the immediate past increment and a retained memory trace one iteration prior. Under positive initial data `I₀ > 0`, `I₁ > 0` and time-invariant coefficients, the ratio of successive iterates converges to the golden ratio `φ = (1 + √5)/2`. Within SPUFT this ratio governs the asymptotic scaling between adjacent informational quanta,
+
+```
+lim_{n→∞} Iₙ₊₁/Iₙ = φ,
+```
+
+implying that large-scale intent-driven growth allocates resources—such as entropy production, energy budget, or complexity measure encoded in `ι`—in fixed golden-ratio proportions between consecutive epochs. Deviations from constant coefficients or sign-definite initial conditions break the convergence, highlighting that the golden ratio appears precisely when informational feedback is linear, memory-limited to two steps, and amplifying rather than dampening.
 
 ### Operator Representation of Intent
 
