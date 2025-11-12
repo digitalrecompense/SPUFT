@@ -50,15 +50,21 @@ Through further research and open-minded collaboration, the hope is that SPUFT c
 
 [1] Indeterminism - Wikipedia
 https://en.wikipedia.org/wiki/Indeterminism
+
 [2] [8] Why Everything in the Universe Turns More Complex | Quanta Magazine
 https://www.quantamagazine.org/why-everything-in-the-universe-turns-more-complex-20250402/
+
 [3] cosmology - How can a bubble universes within eternally inflating space be both finite and infinite? - Physics Stack Exchange
 https://physics.stackexchange.com/questions/730572/how-can-a-bubble-universes-within-eternally-inflating-space-be-both-finite-and-i
+
 [4] [5] Scientist suggests big loop theory of the universe | Research | The Guardian
 https://www.theguardian.com/education/2005/apr/14/research.highereducation1
+
 [6] Time and the universe are on an infinite loop: Conformal cyclic cosmology and Nietzsche's eternal return | Baptiste Le Bihan » IAI TV
 https://iai.tv/articles/time-and-the-universe-are-on-an-infinite-loop-auid-2925
+
 [7] A possible evolutionary function of phenomenal conscious ...
 https://pmc.ncbi.nlm.nih.gov/articles/PMC8206511/
+
 [9] [10] Angelito Malicse, The Purpose of Human Life: Surviving, Suffering, and Seeking Meaning - PhilArchive
 https://philarchive.org/rec/MALTPO-50
