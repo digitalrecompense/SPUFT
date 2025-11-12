@@ -2,14 +2,18 @@
 
 ## Overview and Foundational Concepts
 
-**SPUFT** postulates that all reality emerges from a single, dimensionless origin point (\mathcal{O}) (the "god-script"). From this primordial point, space, time, and eventually life and consciousness unfold in a hierarchical manner. The theory aims to unify physical laws with an informational or metaphysical intent guiding the universe’s creation.
+**SPUFT** postulates that all reality emerges from a single, dimensionless origin point `𝒪` (the "god-script"). From this primordial point, space, time, and eventually life and consciousness unfold in a hierarchical manner. The theory aims to unify physical laws with an informational or metaphysical intent guiding the universe’s creation.
 
 We define key elements:
 
-* **Origin Point (\mathcal{O}):** 0-dimensional, containing all potential information — a singular initial condition.
-* **Intent Operator (\hat{\mathcal{I}}):** Rule or function applying creative principles to (\mathcal{O}). Example formulation:
-  [ \mathcal{S}_{n+1} = \hat{\mathcal{I}}(\mathcal{S}_n), \quad \mathcal{S}_0 = \mathcal{O} ]
-* **Origin Vector (\vec{\Omega}):** Represents dimensional emergence from (\mathcal{O}), evolving from symmetry breaking.
+* **Origin Point `𝒪`**: 0-dimensional, containing all potential information — a singular initial condition.
+* **Intent Operator `Î`**: Rule or function applying creative principles to `𝒪`. Example formulation:
+
+  ```
+  S₀ = 𝒪
+  Sₙ₊₁ = Î(Sₙ)
+  ```
+* **Origin Vector `Ω⃗`**: Represents dimensional emergence from `𝒪`, evolving from symmetry breaking.
 
 We proceed to describe dimensional emergence, field unification, chaos theory, intent formalization, and cosmological constants.
 
@@ -21,56 +25,70 @@ We proceed to describe dimensional emergence, field unification, chaos theory, i
 
 Each new spatial dimension arises by introducing a new independent basis vector:
 
-* 0-simplex (point) → 1-simplex (line): (\mathbf{e}_1)
-* 1D → 2D: add (\mathbf{e}_2)
-* 2D → 3D: add (\mathbf{e}_3)
+* 0-simplex (point) → 1-simplex (line): `e₁`
+* 1D → 2D: add `e₂`
+* 2D → 3D: add `e₃`
 
-Result: (\mathbb{R}^3), classical 3D space.
+Result: `ℝ³`, classical 3D space.
 
 ### Dimensional Timeline:
 
-[ D(\tau) = \begin{cases} 0 & \tau < \tau_1 \ 1 & \tau_1 \leq \tau < \tau_2 \ 2 & \tau_2 \leq \tau < \tau_3 \ 3 & \tau \geq \tau_3 \end{cases} ]
+```
+D(τ) = {
+  0, τ < τ₁
+  1, τ₁ ≤ τ < τ₂
+  2, τ₂ ≤ τ < τ₃
+  3, τ ≥ τ₃
+}
+```
 
-Each (\tau_i) represents symmetry-breaking moments.
+Each `τᵢ` represents symmetry-breaking moments.
 
 ### Higher Dimensions and Compactification:
 
-Let (N\ge3). The universe manifold:
+Let `N ≥ 3`. The universe manifold:
 
-[ \mathcal{M} = \mathcal{M}*{\text{phys}} \times \mathcal{M}*{\text{extra}} ]
+```
+𝓜 = 𝓜_phys × 𝓜_extra
+```
 
-* (\mathcal{M}_{\text{phys}}): Observable 4D space-time
-* (\mathcal{M}_{\text{extra}}): Compactified dimensions (e.g. (S^1) in KK theory)
-* Planck-scale emergence: (R_i(0) = l_P), where (l_P \approx 1.6 \times 10^{-35} \text{m})
+* `𝓜_phys`: Observable 4D space-time
+* `𝓜_extra`: Compactified dimensions (e.g. `S¹` in KK theory)
+* Planck-scale emergence: `Rᵢ(0) = lₚ`, where `lₚ ≈ 1.6 × 10⁻³⁵ m`
 
 ---
 
 ## Unified Field Equations
 
-Define a master field (\Upsilon(x)) on (\mathcal{M}):
+Define a master field `𝛶(x)` on `𝓜`:
 
-[ \Upsilon = {g_{\mu\nu}(x), A_{\mu}(x), \Phi(x), \psi(x), \dots} ]
+```
+𝛶 = {g_{μν}(x), A_{μ}(x), Φ(x), ψ(x), ...}
+```
 
 Unified action:
 
-[ S_{\text{unified}} = \int_{\mathcal{M}} d^N x \sqrt{-G} ; \mathcal{L}_{\text{unified}}(\Upsilon, \partial \Upsilon) ]
+```
+S_unified = ∫ dⁿx √(-G) ℒ_unified(𝛶, ∂𝛶)
+```
 
 Sample Lagrangian:
 
-[ \mathcal{L}*{\text{unified}} = \frac{1}{2\kappa} R(G) + \mathcal{L}*{\text{fields}} + \mathcal{L}_{\text{extra-dim}} + \dots ]
+```
+ℒ_unified = (1/2κ) R(G) + ℒ_fields + ℒ_extra-dim + ...
+```
 
 Derived equations:
 
-* **Einstein equations:**
-  [ R_{\mu\nu} - \frac{1}{2} g_{\mu\nu} R + \Lambda g_{\mu\nu} = 8 \pi G \langle T_{\mu\nu}^{(\text{eff})} \rangle ]
-* **Gauge fields:**
-  [ \nabla^\nu F_{\mu\nu} = J_\mu ]
-* **Scalar fields:**
-  [ \nabla^2 \Phi - \frac{\partial V}{\partial \Phi} = 0 ]
+* **Einstein equations**: `R_{μν} - ½ g_{μν} R + Λ g_{μν} = 8πG ⟨T_{μν}⟩`
+* **Gauge fields**: `∇^ν F_{μν} = J_μ`
+* **Scalar fields**: `∇²Φ - ∂V/∂Φ = 0`
 
 Unified abstraction:
 
-[ \mathcal{F}[\Upsilon] = 0 ]
+```
+𝔽[𝛶] = 0
+```
 
 ---
 
@@ -78,19 +96,22 @@ Unified abstraction:
 
 ### Deterministic Chaos:
 
-* Trajectories diverge exponentially: (\Delta x(t) \sim \Delta x(0) e^{\lambda t})
-* Example: logistic map, SDE:
+* Exponential divergence: `Δx(t) ≈ Δx(0) e^{λt}`
+* Example stochastic model:
 
-  [ dX(t) = f(X(t)) dt + \varepsilon dW(t) ]
+```
+dX(t) = f(X(t)) dt + ε dW(t)
+```
 
 ### Quantum Uncertainty:
 
-* Born rule: (P \sim |\Psi|^2)
-* Dual nature: deterministic evolution + probabilistic projection
+* Born rule: `P ∝ |Ψ|²`
 
 Summary:
 
-[ \text{Evolution} = \text{Predictable Law} + \text{Uncertainty} ]
+```
+Evolution = Predictable Law + Uncertainty
+```
 
 ---
 
@@ -98,46 +119,54 @@ Summary:
 
 ### Formalization:
 
-* Modify action:
+* Action principle with intent:
 
-  [ \delta(S_{\text{phys}} + S_{\text{intent}}) = 0 ]
+```
+δ(S_phys + S_intent) = 0
+```
 
-* Information functional:
+* Information increasing over time:
 
-  [ \frac{d}{dt} \mathcal{I}[S(t)] \geq 0 ]
+```
+d/dt I[S(t)] ≥ 0
+```
 
-* Anthropic constraint via potential:
+* Anthropic bias:
 
-  [ \mathcal{L}*{\text{intent}} = -V*{\text{intent}}(\vec{\alpha}) ]
+```
+ℒ_intent = -V_intent(α⃗)
+```
 
 * Golden ratio via recurrence:
 
-  [ I_{n+1} = I_n + I_{n-1}, \quad \Rightarrow \frac{I_{n+1}}{I_n} \to \varphi ]
+```
+Iₙ₊₁ = Iₙ + Iₙ₋₁ → Iₙ₊₁/Iₙ → φ
+```
 
 ---
 
 ## Constants and Ratios in SPUFT
 
-* **Planck scale:** Boundary condition for emergence: (l_P) defines resolution
-* **(\pi):** Links linear and circular structures; arises in geometry and waves
-* **(\varphi):** Emerges from recursive growth, optimization, Fibonacci patterns
-* **Other constants:** (e, \alpha, G, \hbar, c) all embedded in initial conditions and field laws
+* `lₚ` (Planck length): emergence boundary scale
+* `π`: geometric and wave-related structure
+* `φ` (golden ratio): recursive optimization and growth pattern
+* `e`, `α`, `G`, `ħ`, `c`: fundamental constants baked into structure
 
 ---
 
 ## Summary of Key Equations
 
-| Name                 | Equation                                                                                  | Description                             |
-| -------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------- |
-| Creation Iteration   | (\mathcal{S}_{n+1} = \hat{\mathcal{I}}(\mathcal{S}_n))                                    | Algorithmic creation from (\mathcal{O}) |
-| Dimension Span       | (\dim(\text{span}{\mathcal{O}, p_1, \dots, p_n}) = n)                                     | Geometric emergence of dimensions       |
-| Unified Manifold     | (\mathcal{M} = \mathcal{M}*{\text{phys}}^{(4)} \times \mathcal{M}*{\text{extra}}^{(N-4)}) | Factorized space-time                   |
-| Master Field EOM     | (\mathcal{F}[\Upsilon] = 0)                                                               | Unified field equation                  |
-| Einstein Equation    | (R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} = 8\pi G \langle T_{\mu\nu} \rangle)               | Gravity from geometry and energy        |
-| Chaos Divergence     | (\Delta x(t) \sim \Delta x(0)e^{\lambda t})                                               | Sensitive dependence                    |
-| Stochastic Model     | (dX = f(X)dt + \varepsilon dW(t))                                                         | Noise-inclusive evolution               |
-| Intent Extremization | (\delta(S_{\text{phys}} + S_{\text{intent}}) = 0)                                         | Bias toward complexity or life          |
-| Fibonacci Growth     | (I_{n+1} = I_n + I_{n-1})                                                                 | Golden ratio from recursive structure   |
+| Name                 | Equation                            | Description                                   |
+| -------------------- | ----------------------------------- | --------------------------------------------- |
+| Creation Iteration   | `Sₙ₊₁ = Î(Sₙ)`                      | Discrete creation logic from the origin       |
+| Dimension Span       | `dim(span{𝒪, p₁...pₙ}) = n`        | Adding a dimension step-by-step               |
+| Unified Manifold     | `𝓜 = 𝓜_phys⁽⁴⁾ × 𝓜_extra⁽ᴺ⁻⁴⁾`   | Full space with compactified extra dimensions |
+| Unified Equation     | `𝔽[𝛶] = 0`                        | Master field equation                         |
+| Einstein Equation    | `R_{μν} - ½ Rg_{μν} = 8πG ⟨T_{μν}⟩` | General relativity coupled to matter          |
+| Chaos Divergence     | `Δx(t) ≈ Δx(0) e^{λt}`              | Lyapunov growth; deterministic chaos          |
+| Stochastic Evolution | `dX = f(X) dt + ε dW(t)`            | Noisy evolution or quantum randomness         |
+| Intent Extremization | `δ(S_phys + S_intent) = 0`          | Incorporating guiding bias                    |
+| Fibonacci Growth     | `Iₙ₊₁ = Iₙ + Iₙ₋₁ → Iₙ₊₁/Iₙ → φ`    | Recursive complexity leading to golden ratio  |
 
 ---
 
@@ -152,7 +181,3 @@ Summary:
 * [Pi Patterns in Life - Biophysics.org](https://www.biophysics.org/blog/pi-is-encoded-in-the-patterns-of-life)
 * [Golden Ratio - Wikipedia](https://en.wikipedia.org/wiki/Golden_ratio)
 * [Golden Ratio Across Scales - MDPI](https://www.mdpi.com/2073-8994/14/10/2059)
-
----
-
-This document builds SPUFT as a mathematical framework unifying physical law and existential intent from a single origin point (\mathcal{O}).
